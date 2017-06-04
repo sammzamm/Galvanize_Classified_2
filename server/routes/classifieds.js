@@ -2,9 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-const knex = require('../knex');
+const knex = require('../../knex');
 
-// YOUR CODE HERE
 
 // READ
 router.get('/', (req, res, next) => {
@@ -36,6 +35,7 @@ router.post('/', (req, res, next) => {
     item_image: req.body.item_image})
     .returning(['id', 'title', 'description', 'price', 'item_image'])
     .then((results) => {
+      console.log('results', results[0]);
     res.json(results[0]);
   })
   .catch((err) => {

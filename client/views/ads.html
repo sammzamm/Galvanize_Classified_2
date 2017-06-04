@@ -1,0 +1,82 @@
+<h1>Galvanize Classifieds</h1>
+<form name="$ctrl.form" class="form" ng-submit="$ctrl.createAd()">
+  <!-- title -->
+  <div class="form-group">
+    <label class="control-label" for="title">Title</label>
+    <input ng-model="$ctrl.form.title" type="title" class="form-control" id="adTitle" placeholder="enter title">
+  </div>
+  <!-- price -->
+  <div class="form-group">
+    <label class="control-label" for="price">Price</label>
+    <input ng-model="$ctrl.form.price" type="price" class="form-control" id="adPrice" placeholder="enter price">
+  </div>
+  <!-- description -->
+  <div class="form-group">
+    <label class="control-label" for="description">Description</label>
+    <input ng-model="$ctrl.form.description" class="form-control" id="adDescription" placeholder="enter description">
+  </div>
+  <!-- image -->
+  <div>
+    <label class="control-label" for="img">Image</label>
+    <input name="item_image" ng-model="$ctrl.form.item_image" placeholder="Add a photo" type="url" class="form-control" id="image">
+  </div>
+
+  <br>
+  <!-- submit form -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+<br>
+<hr>
+
+
+<div ng-repeat="ad in $ctrl.ads">
+  <div>
+
+    <h2>{{ad.title}}</h1>
+      <h3>${{ad.price}}</h3>
+<img ng-src="{{ad.item_image}}" alt="image">
+<p>{{ad.description}}</p>
+
+<div class="container">
+  <div class="row">
+<button ng-click="$ctrl.showEdit = !$ctrl.showEdit" id="{{ad.id}}" class="btn btn-info">Edit Post</button>
+<button ng-click="$ctrl.deleteAd($event)" id="{{ad.id}}" class="btn btn-danger">Delete Post</button>
+</div>
+</div>
+
+<form name="$ctrl.editForm" id="{{ad.id}}" class="form" ng-show="$ctrl.showEdit" ng-submit="$ctrl.editAd(ad.id, ad.title, ad.price, ad.description, ad.item_image)">
+  <!-- title -->
+  <div class="form-group">
+    <label class="control-label" for="title">Title</label>
+    <input ng-model="ad.title" type="title" class="form-control" id="adTitle">
+  </div>
+  <!-- price -->
+  <div class="form-group">
+    <label class="control-label" for="price">Price</label>
+    <input ng-model="ad.price" type="price" class="form-control" id="adPrice" placeholder="enter price">
+  </div>
+  <!-- description -->
+  <div class="form-group">
+    <label class="control-label" for="description">Description</label>
+    <input ng-model="ad.description" class="form-control" id="adDescription" placeholder="enter description">
+  </div>
+  <!-- image -->
+  <div>
+    <label class="control-label" for="img">Image</label>
+    <input name="item_image" ng-model="ad.item_image" placeholder="Add a photo" type="url" class="form-control" id="image">
+  </div>
+
+  <br>
+  <!-- submit form -->
+  <button ng-click="toggleNewPost = false"  type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+<hr>
+<br>
+
+</div>
+
+</div>
