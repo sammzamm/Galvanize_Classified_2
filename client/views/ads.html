@@ -1,4 +1,10 @@
+<nav>
+  Galvanize Classifieds
+</nav>
+
 <h1>Galvanize Classifieds</h1>
+
+<div class="well">
 <form name="$ctrl.form" class="form" ng-submit="$ctrl.createAd()">
   <!-- title -->
   <div class="form-group">
@@ -26,24 +32,25 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
+</div>
 
-<br>
-<hr>
-
-
-<div ng-repeat="ad in $ctrl.ads">
+<div ng-repeat="ad in $ctrl.ads" class="well">
   <div>
-
-    <h2>{{ad.title}}</h1>
-      <h3>${{ad.price}}</h3>
-<img ng-src="{{ad.item_image}}" alt="image">
-<p>{{ad.description}}</p>
+    <h2 class="title">{{ad.title}}</h1>
+      <hr>
+      <h3 class="price">${{ad.price}}</h3>
+      <div class="container">
+        <div class="row col-xs-12">
+          <img ng-src="{{ad.item_image}}" alt="image">
+          <p class="description">{{ad.description}}</p>
+        </div>
+      </div>
 
 <div class="container">
   <div class="row">
-<button ng-click="$ctrl.showEdit = !$ctrl.showEdit" id="{{ad.id}}" class="btn btn-info">Edit Post</button>
-<button ng-click="$ctrl.deleteAd($event)" id="{{ad.id}}" class="btn btn-danger">Delete Post</button>
-</div>
+    <button ng-click="$ctrl.showEdit = !$ctrl.showEdit" id="{{ad.id}}" class="edit btn btn-info">Edit Post</button>
+    <button ng-click="$ctrl.deleteAd($event)" id="{{ad.id}}" class="delete btn btn-danger">Delete Post</button>
+  </div>
 </div>
 
 <form name="$ctrl.editForm" id="{{ad.id}}" class="form" ng-show="$ctrl.showEdit" ng-submit="$ctrl.editAd(ad.id, ad.title, ad.price, ad.description, ad.item_image)">
@@ -74,9 +81,12 @@
 
 </form>
 
-<hr>
 <br>
 
 </div>
 
 </div>
+
+<footer>
+  &copy Galvanize Classifieds
+</footer>

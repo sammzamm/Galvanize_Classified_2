@@ -14,6 +14,8 @@ app.use('/classifieds', messages);
 
 app.use('/javascripts', express.static(path.join(__dirname, './client/javascripts')));
 
+app.use('/stylesheets', express.static(path.join(__dirname, './client/stylesheets')));
+
 app.use('/views', express.static(path.join(__dirname, './client/views')));
 
 app.use('*', function(req, res, next) {

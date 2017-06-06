@@ -1,0 +1,50 @@
+h1{
+  text-align: center;
+}
+
+.title{
+  text-align: center;
+}
+
+.description{
+float: right;
+}
+
+.price{
+margin-left: 20px;
+}
+
+img{
+margin-left: 20px;
+width: 300px;
+height: auto;
+border-width: 1px;
+border-style: solid;
+
+border-radius: 10px;
+}
+
+.edit{
+  margin-left: 50px;
+  margin-top: 10px
+}
+
+.delete{
+  margin-left: 45px;
+  margin-top: 10px
+}
+
+nav{
+  background-color: black;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+footer{
+  background-color: black;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
