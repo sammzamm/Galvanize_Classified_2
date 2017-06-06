@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "knex": "knex",
-    "heroku-postbuild": "knex migrate:rollback --knexfile ../knexfile.js; knex migrate:latest --knexfile ../knexfile.js; knex seed:run --knexfile ../knexfile.js;",
-    "nodemon": "node server.js",
+    "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
+    "nodemon": "node server.js"
   },
   "keywords": [],
   "author": "",
