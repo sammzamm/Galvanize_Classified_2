@@ -7,15 +7,12 @@
     "start": "node server.js",
     "knex": "knex",
     "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
-    "nodemon": "node server.js",
-    "nf": "nf start",
-    "test": "mocha"
+    "nodemon": "node server.js"
   },
   "keywords": [],
   "author": "",
   "description": "",
   "dependencies": {
-    "angular": "^1.6.4",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
